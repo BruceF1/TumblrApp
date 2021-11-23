@@ -7,10 +7,29 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'http://fonts.googgleapis.com/css?family=Raleway:400,700' %>
+  
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+      <ul>
+        <li ><%= link_to "Tumblr", root_path %></li>
+        <li><%= link_to "Posts", root_path %>
+        <li>About</li>
+      </ul>
+      <p>User Login</p>
+
+        <p> Post Feed</p>
+        <div class="buttons">
+          <button class="button"><%= link_to "Create Post", new_post_path %></button>
+          <button class="button"><%= link_to "Log Out" %></button>
+        </div>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg , class: "alert") %>    
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

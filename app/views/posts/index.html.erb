@@ -1,5 +1,7 @@
-<h1> This is the index page</h1>
-
-    <% @posts.each do |post| %>
-    <p><%= post.id %><%= link_to post.title, post%></p>
-    <% end %>
+Posts
+<% @posts.each do |post| %>
+        <h2><%= link_to post.title, post%></h2>
+        <p><%= truncate(post.body, length:100) %></p>
+        <p><%= time_ago_in_words(post.created_at) %>ago></p>
+    </div>
+<% end %>
