@@ -22,17 +22,17 @@
       <p><%= link_to 'Login', new_user_session_path %></p>
 
       <% if current_page?(root_path) %>
-        <p> Post Feed</p>
+          <p> Post Feed</p>
         <% elsif current_page?(about_path) %>
-        <p>My Site</p>
+          <p>My Site</p>
         <% else %>
-        <%= link_to "Back to Post Feed", root_path %>
+          <%= link_to "Back to Post Feed", root_path %>
         <% end %>
         <%= if user_signed_in? %>
-        <div class="buttons">
-          <button class="button"><%= link_to "Create Post", new_post_path %></button>
-          <button class="button"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></button>
-        </div>
+          <div class="buttons">
+            <button class="button"><%= link_to "Create Post", new_post_path %></button>
+            <button class="button"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></button>
+          </div>
         <% end %>
 
     <% flash.each do |name, msg| %>
